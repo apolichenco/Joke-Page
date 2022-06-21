@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=  , initial-scale=1.0">
+    <meta name="viewport">
     <link rel="stylesheet" href="style.css">
     <title>Joke Page</title>
 </head>
 <body>
-    <ul>
-        <li class="nav-bar"><a href=#>Random Joke</a></li>
-        <li class="nav-bar"><a href=#>Joke List</a></li>
-      </ul>
+    <div id="nav-bar">
+        <h2 id="nav-bar-title">YOUR DAILY LAUGH</h2>
+        <ul class="nav-bar-ul">
+            <li class="nav-bar-li">Random Joke</li>
+            <li class="nav-bar-li">Joke List</li>
+        </ul>
+    </div>
+    <div class="joke-box">
+        <h4>Random Joke</h4>
+        <p>
+
+        </p>
+    </div>
+    <label for="select-breed">Select Joke Category:</label>
+    <select id="breed-dropdown" name="select-breed">
+      <option value="a">Programming</option>
+      <option value="b">Misc</option>
+      <option value="c">Dark</option>
+      <option value="d">Pun</option>
+      <option value="e">Spooky</option>
+    </select>
     <script src="index.js"></script>
 </body>
 </html>
