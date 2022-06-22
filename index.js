@@ -45,3 +45,28 @@ function findCorrectCategory(whichcategory, theJoke) {
         jokeCategory.append(actualJoke)
     }
 
+    setTimeout(dropdownSorter, 500)
+    function dropdownSorter(){
+        const dropDown = document.querySelector('#joke-dropdown')
+        dropDown.addEventListener('change', handleChange)
+
+    }
+
+
+function handleChange(event) {
+    const letter = event.target.value
+    console.log(letter)
+    console.log(event)
+    console.log(event.target)
+    // const filteredBreeds = breeBree.filter(breed => breed.startsWith(letter))
+    // let breedContainer = document.querySelector('#dog-breeds')
+    // breedContainer.innerHTML = ''
+    // filteredBreeds.forEach(bree => addBreedToImagine(bree))
+    // breedContainer.append(filteredBreeds)
+}
+    // function addBreedToImagine(bree){
+    //     let breedContainer = document.querySelector('#dog-breeds')
+    //     let breed = document.createElement('li')
+    //     breed.innerHTML = bree
+    //     breedContainer.append(breed);
+    // }
