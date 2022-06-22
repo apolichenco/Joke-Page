@@ -34,6 +34,9 @@
 .nav-bar-li:last-child {
     border-right: none;
 }
+#joke-dropdown{
+    position: sticky;
+}
 .joke-box {
     border-style: solid;
     height: 200px;
@@ -54,7 +57,7 @@
 .single-joke-box {
     margin: 10px;
     height: auto;
-    width: 40%;
+    width: 45%;
     text-align: center;
     border: 3px solid purple;
     display: inline-flex;

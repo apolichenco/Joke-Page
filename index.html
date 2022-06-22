@@ -11,8 +11,17 @@
     <div id="nav-bar">
         <h2 id="nav-bar-title">YOUR DAILY LAUGH</h2>
         <ul class="nav-bar-ul">
-            <li class="nav-bar-li">Random Joke</li>
-            <li class="nav-bar-li">Joke List</li>
+            <li class="nav-bar-li"><a href="#top">Random Joke</a></li>
+            <li class="nav-bar-li">
+                <select id="joke-dropdown" name="select-joke">
+                    <option value="all">Categories</option>
+                    <option value="a">Programming</option>
+                    <option value="b">Misc</option>
+                    <option value="c">Dark</option>
+                    <option value="d">Pun</option>
+                    <option value="e">Spooky</option>
+                  </select>
+            </li>
         </ul>
     </div>
     <div class="joke-box">
@@ -21,35 +30,32 @@
 
         </p>
     </div>
-    <label for="select-joke">Select Joke Category:</label>
-    <select id="joke-dropdown" name="select-joke">
-      <option value="all">All Jokes</option>
-      <option value="a">Programming</option>
-      <option value="b">Misc</option>
-      <option value="c">Dark</option>
-      <option value="d">Pun</option>
-      <option value="e">Spooky</option>
-    </select>
-    <h4>Programming</h4>
-    <div class="all-jokes" id="Programming-jokes">
-        
+
+    <h4 id="pro-jokes">Programming</h4>
+    <br>
+    <div class="all-jokes" id="Programming-jokes">    
     </div>
-    <h4>Misc</h4>
+
+    <h4 id="mis-jokes">Misc</h4>
+    <br>
     <div class="all-jokes" id="Misc-jokes">
-        
     </div>
-    <h4>Dark</h4>
+
+    <h4 id="dar-jokes">Dark</h4>
+    <br>
     <div class="all-jokes" id="Dark-jokes">
-        
     </div>
-    <h4>Pun</h4>
+
+    <h4 id="pu-jokes">Pun</h4>
+    <br>
     <div class="all-jokes" id="Pun-jokes">
-        
     </div>
-    <h4>Spooky</h4>
-    <div class="all-jokes" id="Spooky-jokes">
-        
+
+    <h4 id="spo-jokes">Spooky</h4>
+    <br>
+    <div class="all-jokes"  id="Spooky-jokes">      
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>

@@ -55,14 +55,30 @@ function findCorrectCategory(whichcategory, theJoke) {
 
 function handleChange(event) {
     const letter = event.target.value
-    console.log(letter)
-    console.log(event)
-    console.log(event.target)
-    // const filteredBreeds = breeBree.filter(breed => breed.startsWith(letter))
-    // let breedContainer = document.querySelector('#dog-breeds')
-    // breedContainer.innerHTML = ''
-    // filteredBreeds.forEach(bree => addBreedToImagine(bree))
-    // breedContainer.append(filteredBreeds)
+    // console.log(letter)
+    // console.log(event)
+    // console.log(event.target.innerHTML)
+    // console.log(letter.innerHTML)
+
+    if (letter === "all") {
+        window.location.hash = "#top";    
+     }
+    if (letter === "a") {
+        window.location.hash = "#pro-jokes";    
+    }
+    if (letter === "b") {
+        window.location.hash = "#mis-jokes";    
+    }
+    if (letter === "c") {
+        window.location.hash = "#dar-jokes";    
+    }
+    if (letter === "d") {
+        window.location.hash = "#pu-jokes";    
+    }
+    if (letter === "e") {
+        window.location.hash = "#spo-jokes";    
+    }
+
 }
     // function addBreedToImagine(bree){
     //     let breedContainer = document.querySelector('#dog-breeds')
@@ -70,3 +86,9 @@ function handleChange(event) {
     //     breed.innerHTML = bree
     //     breedContainer.append(breed);
     // }
+
+        // const filteredBreeds = breeBree.filter(breed => breed.startsWith(letter))
+    // let breedContainer = document.querySelector('#dog-breeds')
+    // breedContainer.innerHTML = ''
+    // filteredBreeds.forEach(bree => addBreedToImagine(bree))
+    // breedContainer.append(filteredBreeds)
