@@ -3,10 +3,37 @@ fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?typ
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        console.log(data.)
-        // breeBree = Object.keys(data.message);
-        // breedArray = Object.entries(data);
-        // breedTypes = Object.entries(breedArray[0][1])
-        // breedTypes.forEach(link => addBreedToImage(link))
+
+        breedArray = Object.entries(data.jokes);
+        breedArray.forEach(link => {
+        categorize(link)
+        })
     });
+
+    function categorize(theJoke) {
+        if (theJoke[1].category === "Programming") {
+            findCorrectCategory("Programming", theJoke)
+        }
+        if (theJoke[1].category === "Misc") {
+            findCorrectCategory("Misc", theJoke)
+        }
+        if (theJoke[1].category === "Dark") {
+            findCorrectCategory("Dark", theJoke)
+        }
+        if (theJoke[1].category === "Pun") {
+            findCorrectCategory("Pun", theJoke)
+        }
+        if (theJoke[1].category === "Spooky") {
+            findCorrectCategory("Spooky", theJoke)
+        }
+    }
+
+function findCorrectCategory(whichcategory, theJoke) {
+        const jokeCategory = document.querySelector(`#${whichcategory}-jokes`)
+        const actualJoke = document.createElement('div')
+        actualJoke.className = 'single-joke-box'
+        const theJokeItself = theJoke[1].joke
+        actualJoke.innerHTML = `<p>${theJokeItself}</p>`
+        jokeCategory.append(actualJoke)
+    }
+

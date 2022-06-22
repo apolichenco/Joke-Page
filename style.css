@@ -46,3 +46,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.all-jokes {
+    display: flex;
+}
+.single-joke-box {
+    margin: 10px;
+    height: auto;
+    width: 50%;
+    text-align: center;
+    border: 3px solid purple;
+    display: inline-flex;
+}
