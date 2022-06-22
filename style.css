@@ -49,11 +49,12 @@
 
 .all-jokes {
     display: flex;
+    flex-wrap: wrap;
 }
 .single-joke-box {
     margin: 10px;
     height: auto;
-    width: 50%;
+    width: 40%;
     text-align: center;
     border: 3px solid purple;
     display: inline-flex;
