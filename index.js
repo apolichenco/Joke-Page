@@ -4,6 +4,7 @@ fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?typ
     })
     .then(function (data) {
         console.log(data)
+        console.log(data.)
         // breeBree = Object.keys(data.message);
         // breedArray = Object.entries(data);
         // breedTypes = Object.entries(breedArray[0][1])
