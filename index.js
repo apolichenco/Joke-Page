@@ -76,3 +76,10 @@ function keepRandomizing() {
     document.querySelector("#make-it-random").addEventListener("click", randomizeTheJoke)
 } 
 // document.querySelector("#add-a-joke").addEventListener("click", )
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
