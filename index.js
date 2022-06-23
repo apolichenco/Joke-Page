@@ -71,3 +71,7 @@ function randomizeTheJoke() {
 }
 
 setTimeout(randomizeTheJoke, 1000)
+setTimeout(keepRandomizing, 1500)
+function keepRandomizing() {
+    document.querySelector("#make-it-random"),addEventListener("click", randomizeTheJoke)
+}  
