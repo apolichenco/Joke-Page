@@ -11,7 +11,18 @@
     <div id="nav-bar">
         <h2 id="nav-bar-title">YOUR DOSE OF JOKES</h2>
         <ul class="nav-bar-ul">
-            <li class="nav-bar-li"><a href="#top">Add a Joke</a></li>
+            <li class="nav-bar-li" id="add-a-joke">
+                <button>Add a Joke</button>
+                <div class="form-popup" id="myForm">
+                    <form action="#" class="form-container">
+                        <h1>Add your own Joke</h1>
+                        <label for="joke"><b>Your Joke</b></label>
+                        <input type="text" placeholder="Enter Your Joke" name="joke" required>
+                        <button type="submit" class="btn">Enter the Joke</button>
+                        <button type="button" class="btn cancel">Close</button>
+                        </form>
+                </div>
+            </li>
             <li class="nav-bar-li">
                 <select id="joke-dropdown" name="select-joke">
                     <option value="all">Categories</option>
@@ -55,7 +66,6 @@
     <br>
     <div class="all-jokes"  id="Spooky-jokes">      
     </div>
-
     <script src="index.js"></script>
 </body>
 </html>

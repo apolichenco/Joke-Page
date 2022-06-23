@@ -67,7 +67,6 @@ function randomizeTheJoke() {
     const randomBox = document.querySelector("#random-joke-displayed")
     const randomNumber = Math.floor(Math.random() * (50 - 1) ) + 1;
     let actualRandomJoke = document.querySelector(`#jokeNumber${randomNumber}`)
-    console.log(actualRandomJoke)
     randomBox.innerHTML = actualRandomJoke.innerHTML
 }
 
@@ -76,3 +75,4 @@ setTimeout(keepRandomizing, 2000)
 function keepRandomizing() {
     document.querySelector("#make-it-random").addEventListener("click", randomizeTheJoke)
 } 
+// document.querySelector("#add-a-joke").addEventListener("click", )
