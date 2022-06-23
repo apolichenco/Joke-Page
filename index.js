@@ -1,4 +1,4 @@
-
+let i = 1;
 function fetchJokes() {
     fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
         .then(function(response) {
@@ -19,47 +19,29 @@ fetchJokes();
 fetchJokes();
 
 function categorize(theJoke) {
-    if (theJoke[1].category === "Programming") {
-        findCorrectCategory("Programming", theJoke)
-    }
-    if (theJoke[1].category === "Misc") {
-        findCorrectCategory("Misc", theJoke)
-    }
-    if (theJoke[1].category === "Dark") {
-        findCorrectCategory("Dark", theJoke)
-    }
-    if (theJoke[1].category === "Pun") {
-        findCorrectCategory("Pun", theJoke)
-    }
-    if (theJoke[1].category === "Spooky") {
-        findCorrectCategory("Spooky", theJoke)
-    }
+    let jokeCategories = theJoke[1].category
+    findCorrectCategory(`${jokeCategories}`, theJoke)
 }
 
 function findCorrectCategory(whichcategory, theJoke) {
-        const jokeCategory = document.querySelector(`#${whichcategory}-jokes`)
-        const actualJoke = document.createElement('div')
-        actualJoke.className = 'single-joke-box'
-        const theJokeItself = theJoke[1].joke
-        actualJoke.innerHTML = `<p>${theJokeItself}</p>`
-        jokeCategory.append(actualJoke)
-    }
+    const jokeCategory = document.querySelector(`#${whichcategory}-jokes`)
+    const actualJoke = document.createElement('div')
+    actualJoke.className = 'single-joke-box'
+    const theJokeItself = theJoke[1].joke
+    actualJoke.innerHTML = `<p id="jokeNumber${i}">${theJokeItself}</p>`
+    i ++
+    jokeCategory.append(actualJoke)
+}
 
-    setTimeout(dropdownSorter, 500)
-    function dropdownSorter(){
-        const dropDown = document.querySelector('#joke-dropdown')
-        dropDown.addEventListener('change', handleChange)
-
-    }
+setTimeout(dropdownSorter, 500)
+function dropdownSorter() {
+    const dropDown = document.querySelector('#joke-dropdown')
+    dropDown.addEventListener('change', handleChange)
+}
 
 
 function handleChange(event) {
     const letter = event.target.value
-    // console.log(letter)
-    // console.log(event)
-    // console.log(event.target.innerHTML)
-    // console.log(letter.innerHTML)
-
     if (letter === "all") {
         window.location.hash = "#top";    
      }
@@ -80,15 +62,12 @@ function handleChange(event) {
     }
 
 }
-    // function addBreedToImagine(bree){
-    //     let breedContainer = document.querySelector('#dog-breeds')
-    //     let breed = document.createElement('li')
-    //     breed.innerHTML = bree
-    //     breedContainer.append(breed);
-    // }
+   
+function randomizeTheJoke() {
+    const randomBox = document.querySelector("#random-joke-displayed")
+    const randomNumber = Math.floor(Math.random() * (50 - 1) ) + 1;
+    let actualRandomJoke = document.querySelector(`#jokeNumber${randomNumber}`)
+    randomBox.innerHTML = actualRandomJoke.innerHTML
+}
 
-        // const filteredBreeds = breeBree.filter(breed => breed.startsWith(letter))
-    // let breedContainer = document.querySelector('#dog-breeds')
-    // breedContainer.innerHTML = ''
-    // filteredBreeds.forEach(bree => addBreedToImagine(bree))
-    // breedContainer.append(filteredBreeds)
+setTimeout(randomizeTheJoke, 1000)
