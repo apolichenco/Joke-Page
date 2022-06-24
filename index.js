@@ -98,3 +98,4 @@ function openForm() {
     }
   }
   document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
+  console.log("HI")
