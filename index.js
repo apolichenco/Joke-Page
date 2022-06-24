@@ -20,17 +20,19 @@ fetchJokes();
 
 function categorize(theJoke) {
     let jokeCategories = theJoke[1].category
-    findCorrectCategory(`${jokeCategories}`, theJoke)
+    findCorrectCategory(`${jokeCategories}`, theJoke[1])
 }
 
 function findCorrectCategory(whichcategory, theJoke) {
     const jokeCategory = document.querySelector(`#${whichcategory}-jokes`)
     const actualJoke = document.createElement('div')
     actualJoke.className = 'single-joke-box'
-    const theJokeItself = theJoke[1].joke
-    actualJoke.innerHTML = `<p id="jokeNumber${i}">${theJokeItself}</p>`
-    i ++
-    jokeCategory.append(actualJoke)
+    const theJokeItself = theJoke.joke
+    if (theJokeItself.length < 360) {
+        actualJoke.innerHTML = `<p id="jokeNumber${i}">${theJokeItself}</p>`
+        i ++
+        jokeCategory.append(actualJoke)
+    }
 }
 
 setTimeout(dropdownSorter, 500)
@@ -75,7 +77,6 @@ setTimeout(keepRandomizing, 2000)
 function keepRandomizing() {
     document.querySelector("#make-it-random").addEventListener("click", randomizeTheJoke)
 } 
-// document.querySelector("#add-a-joke").addEventListener("click", )
 function openForm() {
     document.getElementById("myForm").style.display = "block";
   }
@@ -83,3 +84,17 @@ function openForm() {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+
+  function addJokeToPage(e){
+    e.preventDefault()
+    let newJoke = {joke:e.target.joke.value}
+    let newCategory = e.target.section.value
+    console.log(newCategory)
+    if (newCategory === "") {
+        Error("Please pick a category")
+    }
+    else {
+    findCorrectCategory(`${newCategory}`, newJoke)
+    }
+  }
+  document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
