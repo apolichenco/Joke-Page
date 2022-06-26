@@ -89,13 +89,7 @@ function openForm() {
     e.preventDefault()
     let newJoke = {joke:e.target.joke.value}
     let newCategory = e.target.section.value
-    console.log(newCategory)
-    if (newCategory === "") {
-        Error("Please pick a category")
-    }
-    else {
     findCorrectCategory(`${newCategory}`, newJoke)
-    }
+
   }
   document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
-  console.log("HI")
