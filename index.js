@@ -1,26 +1,28 @@
 let i = 1;
+
 function fetchJokes() {
     fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
-        .then(function(response) {
-            return response.json();
-        })
+        .then(response =>response.json())
         .then(function (data) {
-
             breedArray = Object.entries(data.jokes);
             breedArray.forEach(link => {
-            categorize(link)
+                categorize(link[1])
+                postJoke(link[1])
             })
         });
     }
-fetchJokes();
-fetchJokes();
-fetchJokes();
-fetchJokes();
-fetchJokes();
+
+function fetchUploadedJokes() {
+    fetch("http://localhost:3000/jokes")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(joke => categorize(joke))
+    })
+}
 
 function categorize(theJoke) {
-    let jokeCategories = theJoke[1].category
-    findCorrectCategory(`${jokeCategories}`, theJoke[1])
+    let jokeCategories = theJoke.category
+    findCorrectCategory(`${jokeCategories}`, theJoke)
 }
 
 function findCorrectCategory(whichcategory, theJoke) {
@@ -35,12 +37,30 @@ function findCorrectCategory(whichcategory, theJoke) {
     }
 }
 
+function postJoke(theJokeSource) {
+    fetch("http://localhost:3000/jokes", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            joke: theJokeSource.joke,
+            category: theJokeSource.category
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+}
+
+// fetchJokes()
+fetchUploadedJokes()
 setTimeout(dropdownSorter, 500)
+
 function dropdownSorter() {
     const dropDown = document.querySelector('#joke-dropdown')
     dropDown.addEventListener('change', handleChange)
 }
-
 
 function handleChange(event) {
     const letter = event.target.value
@@ -67,13 +87,14 @@ function handleChange(event) {
    
 function randomizeTheJoke() {
     const randomBox = document.querySelector("#random-joke-displayed")
-    const randomNumber = Math.floor(Math.random() * (50 - 1) ) + 1;
+    const randomNumber = Math.floor(Math.random() * (i - 1) ) + 1;
+    console.log(randomNumber)
     let actualRandomJoke = document.querySelector(`#jokeNumber${randomNumber}`)
     randomBox.innerHTML = actualRandomJoke.innerHTML
 }
 
-setTimeout(randomizeTheJoke, 1500)
-setTimeout(keepRandomizing, 2000)
+setTimeout(randomizeTheJoke, 1000)
+setTimeout(keepRandomizing, 1200)
 function keepRandomizing() {
     document.querySelector("#make-it-random").addEventListener("click", randomizeTheJoke)
 } 
