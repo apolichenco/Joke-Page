@@ -10,40 +10,36 @@
 <body>
     <div id="nav-bar">
         <h2 id="nav-bar-title">YOUR DOSE OF JOKES</h2>
-                    <h5 class="nav-bar-li" id="add-a-joke">
-                        <button class="open-button" onclick="openForm()">Add a Joke</button>        
-                    </h5>
-                    <div class="form-popup" id="myForm">
-                        <form action="#" class="form-container" id="add-a-new-joke">
-                            <h1>Add your own Joke</h1>
-                            <label for="joke"><b>Your Joke</b></label>
-                            <input type="text" placeholder="Enter Your Joke" name="joke" required>
-                            <input type="radio" id="Programming" name="section" value="Programming" required>
-                            <label for="section">Programming</label><br>
-                            <input type="radio" id="Misc" name="section" value="Misc">
-                            <label for="section">Misc</label><br>
-                            <input type="radio" id="Dark" name="section" value="Dark">
-                            <label for="section">Dark</label>
-                            <input type="radio" id="Pun" name="section" value="Pun">
-                            <label for="section">Pun</label><br>
-                            <input type="radio" id="Spooky" name="section" value="Spooky">
-                            <label for="section">Spooky</label>
-                            <button type="submit" class="btn">Enter the Joke</button>
-                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                            </form>
-                    </div>
-        <ul class="nav-bar-ul">
-            <li class="nav-bar-li">
-                <select id="joke-dropdown" name="select-joke">
-                    <option value="all">Categories</option>
-                    <option value="a">Programming</option>
-                    <option value="b">Misc</option>
-                    <option value="c">Dark</option>
-                    <option value="d">Pun</option>
-                    <option value="e">Spooky</option>
-                  </select>
-            </li>
-        </ul>
+        <h5 class="nav-bar-li" id="add-a-joke">
+            <button class="open-button" onclick="openForm()">Add a Joke</button>        
+        </h5>
+        <div class="form-popup" id="myForm">
+            <form action="#" class="form-container" id="add-a-new-joke">
+                <h1>Add your own Joke</h1>
+                <label for="joke"><b>Your Joke</b></label>
+                <input type="text" placeholder="Enter Your Joke" name="joke" required>
+                <input type="radio" id="Programming" name="section" value="Programming" required>
+                <label for="section">Programming</label><br>
+                <input type="radio" id="Misc" name="section" value="Misc">
+                <label for="section">Misc</label><br>
+                <input type="radio" id="Dark" name="section" value="Dark">
+                <label for="section">Dark</label>
+                <input type="radio" id="Pun" name="section" value="Pun">
+                <label for="section">Pun</label><br>
+                <input type="radio" id="Spooky" name="section" value="Spooky">
+                <label for="section">Spooky</label>
+                <button type="submit" class="btn">Enter the Joke</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+        </div>
+        <select id="joke-dropdown" name="select-joke">
+            <option value="all">Categories</option>
+            <option value="a">Programming</option>
+            <option value="b">Misc</option>
+            <option value="c">Dark</option>
+            <option value="d">Pun</option>
+            <option value="e">Spooky</option>
+        </select>
     </div>
     <div class="joke-box">
         <button id="make-it-random">Random Joke</button>

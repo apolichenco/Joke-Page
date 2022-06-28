@@ -109,7 +109,9 @@ function openForm() {
 
   function addJokeToPage(e){
     e.preventDefault()
-    let newJoke = {joke:e.target.joke.value}
+    let newJoke = {
+        joke:e.target.joke.value,
+        category:e.target.section.value}
     let newCategory = e.target.section.value
     findCorrectCategory(`${newCategory}`, newJoke)
     postJoke(newJoke)
