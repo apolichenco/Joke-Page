@@ -55,6 +55,7 @@ function postJoke(theJokeSource) {
 
 // fetchJokes()
 fetchUploadedJokes()
+
 setTimeout(dropdownSorter, 500)
 
 function dropdownSorter() {
@@ -111,6 +112,7 @@ function openForm() {
     let newJoke = {joke:e.target.joke.value}
     let newCategory = e.target.section.value
     findCorrectCategory(`${newCategory}`, newJoke)
-
+    postJoke(newJoke)
   }
+
   document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
