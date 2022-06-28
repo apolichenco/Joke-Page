@@ -80,16 +80,11 @@ function handleChange(event) {
     if (letter === "d") {
         window.location.hash = "#pu-jokes";    
     }
-    if (letter === "e") {
-        window.location.hash = "#spo-jokes";    
-    }
-
 }
    
 function randomizeTheJoke() {
     const randomBox = document.querySelector("#random-joke-displayed")
     const randomNumber = Math.floor(Math.random() * (i - 1) ) + 1;
-    console.log(randomNumber)
     let actualRandomJoke = document.querySelector(`#jokeNumber${randomNumber}`)
     randomBox.innerHTML = actualRandomJoke.innerHTML
 }
