@@ -274,6 +274,11 @@
       "joke": "What’s the best thing about Switzerland? I don’t know, but the flag is a big plus.",
       "category": "Pun",
       "id": 55
+    },
+    {
+      "joke": "\"Knock, knock.\"\n\"Who's there?\"\n\n[very long pause]\n\n\"Java.\"",
+      "category": "Programming",
+      "id": 56
     }
   ]
 }

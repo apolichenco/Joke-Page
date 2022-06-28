@@ -25,6 +25,7 @@
     margin-right: 10px;
 }
 .nav-bar-li {
+    float: right;
     display: inline;
     text-align: center;
     padding: 14px 16px;

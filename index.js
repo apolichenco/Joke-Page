@@ -4,10 +4,18 @@ function fetchJokes() {
     fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
         .then(response =>response.json())
         .then(function (data) {
-            breedArray = Object.entries(data.jokes);
+            breedArray = Object.entries(data.jokes);                
+            let allJokes = []
             breedArray.forEach(link => {
-                categorize(link[1])
-                postJoke(link[1])
+                if (allJokes.includes(link[1].joke)) {
+                    console.log("a repeat")
+                }
+                else {
+                    allJokes += link[1].joke
+                    categorize(link[1])
+                    // postJoke(link[1])
+                    return "another one"   
+                }
             })
         });
     }
@@ -16,7 +24,17 @@ function fetchUploadedJokes() {
     fetch("http://localhost:3000/jokes")
     .then(response => response.json())
     .then(data => {
-        data.forEach(joke => categorize(joke))
+        let allJokes = []
+        data.forEach(theJoke => {
+            console.log(theJoke.joke)
+            if (allJokes.includes(theJoke.joke)) {
+                console.log("a repeat")
+            }
+            else {
+            allJokes += theJoke.joke
+            categorize(theJoke)
+            }
+        })
     })
 }
 
@@ -52,8 +70,24 @@ function postJoke(theJokeSource) {
     .then(response => response.json())
     .then(data => console.log(data))
 }
+function checkForRepeats(theJoke) {
+    if (allJokes.includes(theJoke)); 
+    else {
+        allJokes =+ theJoke
+    }
+}
 
 // fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+// fetchJokes()
+
 fetchUploadedJokes()
 
 setTimeout(dropdownSorter, 500)
