@@ -13,7 +13,7 @@ function fetchJokes() {
                 }
                 else {
                     allJokes += searchTheJoke
-                    categorize(link[1])
+                    findCorrectCategory(link[1].category, link[1])                    
                     postJoke(link[1])
                 }
             })
@@ -25,14 +25,9 @@ function fetchUploadedJokes() {
     .then(response => response.json())
     .then(data => {
         data.forEach(theJoke => {
-            categorize(theJoke)
+            findCorrectCategory(theJoke.category, theJoke)
         })
     })
-}
-
-function categorize(theJoke) {
-    let jokeCategories = theJoke.category
-    findCorrectCategory(`${jokeCategories}`, theJoke)
 }
 
 function findCorrectCategory(whichcategory, theJoke) {
@@ -64,8 +59,7 @@ function postJoke(theJokeSource) {
 }
 
 function dropdownSorter() {
-    const dropDown = document.querySelector('#joke-dropdown')
-    dropDown.addEventListener('change', handleChange)
+    document.querySelector('#joke-dropdown').addEventListener('change', handleChange)
 }
 
 function handleChange(event) {
@@ -115,9 +109,8 @@ function addJokeToPage(e){
         let newJoke = {
             joke:e.target.joke.value,
             category:e.target.section.value}
-        let newCategory = newJoke.category
         allJokes += newJoke.joke
-        findCorrectCategory(`${newCategory}`, newJoke)
+        findCorrectCategory(newJoke.category, newJoke)
         postJoke(newJoke)
     }
 }
