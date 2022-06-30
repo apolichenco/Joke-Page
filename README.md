@@ -1,21 +1,26 @@
 # Joke Page
-## Overview of project
+### Overview of project
 This page is meant to add jokes to the page, pull up a random joke, and add a joke.
-### Features:
+##### Features:
    * Press "Fetch More Jokes" to add jokes
    * The jokes will automatically go in the correct category
    * Press "Random Joke" to pull up a random joke
    * Use the dropdown to go to a specific category
    * Press "Add A Joke", fill in a new joke and choose category
 
-## Requirements
-* 
+### Requirements
+    * Have json.server installed
 
-## Installation Instructions
-* 
+### Installation Instructions
+    * Fork and clone
+    * Run json.server for db.json
+    * Open index.html in the browser
 
-## Contributing
-* https://sv443.net/jokeapi/v2/
+### Problems
+    * Part of the code in the fetchJokes function has a formula to stop repeated jokes from being posted, but doesn't work 100%. So another formula is needed at fetchUploadedJokes function. Would like to cut that down.
+    * The random joke box doesn't go under the navbar.
+    * Update the new add joke box.
 
-## Licensing
-* 
+### Licensing
+    * I used the following website: 
+        https://sv443.net/jokeapi/v2/
