@@ -1,5 +1,239 @@
 {
   "jokes": [
-
+    {
+      "joke": "My grandfather says I'm too reliant on technology.\nI called him a hypocrite and unplugged his life support.",
+      "category": "Dark",
+      "id": 1
+    },
+    {
+      "joke": "\"Can I tell you a TCP joke?\"\n\"Please tell me a TCP joke.\"\n\"OK, I'll tell you a TCP joke.\"",
+      "category": "Programming",
+      "id": 2
+    },
+    {
+      "joke": "My wife is really mad at the fact that I have no sense of direction.\nSo I packed up my stuff and right.",
+      "category": "Misc",
+      "id": 3
+    },
+    {
+      "joke": "A neutron walks into a bar and asks for a price on a drink.\nThe barkeeper says: \"For you... no charge!\"",
+      "category": "Misc",
+      "id": 4
+    },
+    {
+      "joke": "The glass is neither half-full nor half-empty, the glass is twice as big as it needs to be.",
+      "category": "Programming",
+      "id": 5
+    },
+    {
+      "joke": "Me and my Jewish friend were eating lunch and I farted. He got mad so I said \"cmon man a little gas never killed anyone\".",
+      "category": "Dark",
+      "id": 6
+    },
+    {
+      "joke": "Two SQL tables sit at the bar. A query approaches and asks \"Can I join you?\"",
+      "category": "Programming",
+      "id": 7
+    },
+    {
+      "joke": "Debugging is like being the detective in a crime movie where you're also the murderer at the same time.",
+      "category": "Programming",
+      "id": 8
+    },
+    {
+      "joke": "Dark humor is like food, not everyone gets it.",
+      "category": "Dark",
+      "id": 9
+    },
+    {
+      "joke": "I have a joke about Stack Overflow, but you would say it's a duplicate.",
+      "category": "Programming",
+      "id": 10
+    },
+    {
+      "joke": "I'm reading a book about anti-gravity. It's impossible to put down!",
+      "category": "Pun",
+      "id": 11
+    },
+    {
+      "joke": "I was reading a great book about an immortal dog the other day. It was impossible to put down.",
+      "category": "Pun",
+      "id": 12
+    },
+    {
+      "joke": "A SQL statement walks into a bar and sees two tables.\nIt approaches, and asks \"may I join you?\"",
+      "category": "Programming",
+      "id": 13
+    },
+    {
+      "joke": "I went to the zoo the other day. There was only a dog in it – it was a shihtzu.",
+      "category": "Misc",
+      "id": 14
+    },
+    {
+      "joke": "Your mama's so FAT she can't save files bigger than 4GB.",
+      "category": "Programming",
+      "id": 15
+    },
+    {
+      "joke": "Your momma is so fat, you need to switch to NTFS to store a picture of her.",
+      "category": "Programming",
+      "id": 16
+    },
+    {
+      "joke": "Judge: \"I sentence you to the maximum punishment...\"\nMe (thinking): \"Please be death, please be death...\"\nJudge: \"Learn Java!\"\nMe: \"Damn.\"",
+      "category": "Programming",
+      "id": 17
+    },
+    {
+      "joke": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
+      "category": "Pun",
+      "id": 18
+    },
+    {
+      "joke": "Today, my son asked \"Can I have a book mark?\" and I burst into tears.\n11 years old and he still doesn't know my name is Brian.",
+      "category": "Pun",
+      "id": 19
+    },
+    {
+      "joke": "I'd tell you a joke about NAT but I would have to translate.",
+      "category": "Programming",
+      "id": 20
+    },
+    {
+      "joke": "A byte walks into a bar looking miserable.\nThe bartender asks it: \"What's wrong buddy?\"\n\"Parity error.\" it replies. \n\"Ah that makes sense, I thought you looked a bit off.\"",
+      "category": "Programming",
+      "id": 21
+    },
+    {
+      "joke": "I have these weird muscle spasms in my gluteus maximus.\nI figured out from my doctor that everything was alright:\nHe said \"Weird flex, butt okay.\"",
+      "category": "Pun",
+      "id": 22
+    },
+    {
+      "joke": "I've got a really good UDP joke to tell you but I don’t know if you'll get it.",
+      "category": "Programming",
+      "id": 23
+    },
+    {
+      "joke": "Relationship Status: just tried to reach for my dog's paw and he pulled it away so I pretended I was reaching for the remote.",
+      "category": "Misc",
+      "id": 24
+    },
+    {
+      "joke": "I have a fish that can breakdance! Only for 20 seconds though, and only once.",
+      "category": "Dark",
+      "id": 25
+    },
+    {
+      "joke": "\"Honey, go to the store and buy some eggs.\"\n\"OK.\"\n\"Oh and while you're there, get some milk.\"\nHe never returned.",
+      "category": "Programming",
+      "id": 26
+    },
+    {
+      "joke": "Schrödinger's cat walks into a bar and doesn't.",
+      "category": "Misc",
+      "id": 27
+    },
+    {
+      "joke": "If Bill Gates had a dime for every time Windows crashed ... Oh wait, he does.",
+      "category": "Programming",
+      "id": 28
+    },
+    {
+      "joke": "To whoever stole my copy of Microsoft Office, I will find you. You have my Word!",
+      "category": "Pun",
+      "id": 29
+    },
+    {
+      "joke": "Nowadays people are so sensitive, you can't even say \"black paint\" anymore.\nInstead, you have to say \"Jamal, please paint the fence\".",
+      "category": "Dark",
+      "id": 30
+    },
+    {
+      "joke": "Stop being homophobic and rude to the LGBTQ+ community. You should be thanking them for saving us plenty of room in heaven.",
+      "category": "Misc",
+      "id": 31
+    },
+    {
+      "joke": "Programming is 10% science, 20% ingenuity, and 70% getting the ingenuity to work with the science.",
+      "category": "Programming",
+      "id": 32
+    },
+    {
+      "joke": "Two reasons I don't give money to homeless people.\n1) They are going to spend it all on drugs and alcohol\n2) I am going to spend it all on drugs and alcohol.",
+      "category": "Misc",
+      "id": 33
+    },
+    {
+      "joke": "Women are like KFC, once you're done with the breasts and thighs, you just have a greasy box to put your bone in.",
+      "category": "Misc",
+      "id": 34
+    },
+    {
+      "joke": "My parents raised me as an only child, which really annoyed my younger brother.",
+      "category": "Misc",
+      "id": 35
+    },
+    {
+      "joke": "If you're here for the yodeling lesson, please form an orderly orderly orderly queue.",
+      "category": "Misc",
+      "id": 36
+    },
+    {
+      "joke": "Have a great weekend!\nI hope your code behaves the same on Monday as it did on Friday.",
+      "category": "Programming",
+      "id": 37
+    },
+    {
+      "joke": "A horse walks into a bar.\n\"Hey\", the Bartender says.\n\"Sure\", the horse replies.",
+      "category": "Pun",
+      "id": 38
+    },
+    {
+      "joke": "Doctor: \"I have some news about your baby.\"\nParents: \"Don't tell us the gender, we want to keep it a surprise.\"\nDoctor: \"Oh I get it, you're those type of people. Okay, well IT is not breathing.\"",
+      "category": "Dark",
+      "id": 39
+    },
+    {
+      "joke": "Today I learned that changing random stuff until your program works is \"hacky\" and a \"bad coding practice\" but if you do it fast enough it's \"Machine Learning\" and pays 4x your current salary.",
+      "category": "Programming",
+      "id": 40
+    },
+    {
+      "joke": "How do you make holy water? You boil the hell out of it.",
+      "category": "Pun",
+      "id": 41
+    },
+    {
+      "joke": "The six stages of debugging:\n1. That can't happen.\n2. That doesn't happen on my machine.\n3. That shouldn't happen.\n4. Why does that happen?\n5. Oh, I see.\n6. How did that ever work?",
+      "category": "Programming",
+      "id": 42
+    },
+    {
+      "joke": "Documentation is like sex:\nWhen it's good, it's very good.\nWhen it's bad, it's better than nothing...",
+      "category": "Programming",
+      "id": 43
+    },
+    {
+      "joke": "Yo mama is so old, she knew Burger King while he was still a prince.",
+      "category": "Misc",
+      "id": 44
+    },
+    {
+      "joke": "My ex had an accident. I told the paramedics the wrong blood type for her. She'll finally experience what rejection is really like.",
+      "category": "Dark",
+      "id": 45
+    },
+    {
+      "joke": "In Soviet Russia, gay sex gets you arrested. In America, getting arrested gets you gay sex.",
+      "category": "Misc",
+      "id": 46
+    },
+    {
+      "joke": "A perfectionist walked into a bar... apparently, the bar was not set high enough.",
+      "category": "Misc",
+      "id": 48
+    }
   ]
 }

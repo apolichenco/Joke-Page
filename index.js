@@ -2,19 +2,19 @@ let i = 1;
 let allJokes = []
 
 function fetchJokes() {
-    fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
+    fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun?blacklistFlags=nsfw,religious,racist,sexist&type=single&amount=10")
         .then(response => response.json())
         .then(function (data) {
             breedArray = Object.entries(data.jokes);                
             breedArray.forEach(link => {
-                let searchTheJoke = link[1].joke
-                if (allJokes.includes(searchTheJoke)) {
+                if (allJokes.includes(link[1].joke)) {
+                    console.log(allJokes.includes(link[1].joke))
                     console.log("Don't come here!!!")
                 }
                 else {
-                    allJokes += searchTheJoke
-                    findCorrectCategory(link[1].category, link[1])                    
+                    allJokes.push(link[1].joke)
                     postJoke(link[1])
+                    findCorrectCategory(link[1].category, link[1])                    
                 }
             })
         });
@@ -25,7 +25,15 @@ function fetchUploadedJokes() {
     .then(response => response.json())
     .then(data => {
         data.forEach(theJoke => {
-            findCorrectCategory(theJoke.category, theJoke)
+            if (allJokes.includes(theJoke.joke)) {
+                const idNumber = theJoke.id
+                console.log("Don't come here!!!")
+                deleteFromDBJ(theJoke, idNumber)
+            }
+            else {
+                allJokes.push(theJoke.joke)
+                findCorrectCategory(theJoke.category, theJoke)
+            }
         })
     })
 }
@@ -58,6 +66,17 @@ function postJoke(theJokeSource) {
     .then(data => console.log("HI"))
 }
 
+function deleteFromDBJ(theJoke, idNumber) {
+    fetch(`http://localhost:3000/jokes/${idNumber}`, { 
+        method: 'DELETE' ,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(elm => console.log(elm))
+}
+
 function dropdownSorter() {
     document.querySelector('#joke-dropdown').addEventListener('change', handleChange)
 }
@@ -79,6 +98,7 @@ function handleChange(event) {
     if (letter === "d") {
         window.location.hash = "#pu-jokes";    
     }
+    window.scrollTo({top: window.scrollY - 60})
 }
   
 function randomizeTheJoke() {
@@ -121,32 +141,3 @@ setTimeout(randomizeTheJoke, 400)
 setTimeout(keepRandomizing, 500)
 document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
 document.querySelector("#fetch-jokes").addEventListener("click", fetchJokes)
-
-
-
-
-
-
-
-//     // allJokes = []
-//     data.forEach(theJoke => {
-//     if (allJokes.includes(theJoke.joke)) {
-//     //     const idNumber = theJoke.id
-//         console.log("Don't come here!!!")
-//     //     deleteFromDBJ(theJoke, idNumber)
-//     }
-//     else {
-//     // allJokes += theJoke.joke
-//     categorize(theJoke)
-//     }
-// })
-// function deleteFromDBJ(theJoke, idNumber) {
-//     fetch(`http://localhost:3000/jokes/${idNumber}`, { 
-//         method: 'DELETE' ,
-//         headers: {
-//             "Content-Type": "application/json"
-//         }
-//     })
-//     .then(res => res.json())
-//     .then(elm => console.log(elm))
-// }

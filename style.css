@@ -45,7 +45,7 @@
 }
 #random-joke-displayed {
   position: absolute;
-  top: 15px;
+  top: 25px;
 }
 #fetch-jokes {
   position: absolute;
