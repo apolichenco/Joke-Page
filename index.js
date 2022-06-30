@@ -1,20 +1,19 @@
 let i = 1;
-
+let allJokes = []
 function fetchJokes() {
     fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
-        .then(response =>response.json())
+        .then(response => response.json())
         .then(function (data) {
             breedArray = Object.entries(data.jokes);                
-            let allJokes = []
             breedArray.forEach(link => {
-                if (allJokes.includes(link[1].joke)) {
-                    console.log("a repeat")
+                let searchTheJoke = link[1].joke
+                if (allJokes.includes(searchTheJoke)) {
+                    console.log("Don't come here!!!")
                 }
                 else {
-                    allJokes += link[1].joke
+                    allJokes += searchTheJoke
                     categorize(link[1])
-                    // postJoke(link[1])
-                    return "another one"   
+                    postJoke(link[1])
                 }
             })
         });
@@ -24,14 +23,15 @@ function fetchUploadedJokes() {
     fetch("http://localhost:3000/jokes")
     .then(response => response.json())
     .then(data => {
-        let allJokes = []
+        // allJokes = []
         data.forEach(theJoke => {
-            console.log(theJoke.joke)
             if (allJokes.includes(theJoke.joke)) {
-                console.log("a repeat")
+            //     const idNumber = theJoke.id
+                console.log("Don't come here!!!")
+            //     deleteFromDBJ(theJoke, idNumber)
             }
             else {
-            allJokes += theJoke.joke
+            // allJokes += theJoke.joke
             categorize(theJoke)
             }
         })
@@ -68,13 +68,17 @@ function postJoke(theJokeSource) {
         })
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => console.log("HI"))
 }
-function checkForRepeats(theJoke) {
-    if (allJokes.includes(theJoke)); 
-    else {
-        allJokes =+ theJoke
-    }
+function deleteFromDBJ(theJoke, idNumber) {
+    fetch(`http://localhost:3000/jokes/${idNumber}`, { 
+        method: 'DELETE' ,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(elm => console.log(elm))
 }
 
 // fetchJokes()
@@ -138,12 +142,21 @@ function openForm() {
 
   function addJokeToPage(e){
     e.preventDefault()
-    let newJoke = {
-        joke:e.target.joke.value,
-        category:e.target.section.value}
-    let newCategory = e.target.section.value
-    findCorrectCategory(`${newCategory}`, newJoke)
-    postJoke(newJoke)
+
+    let allJokes = []
+    if (allJokes.includes(e.target.joke.value)) {
+        console.log("a repeat")
+    }
+    else {
+        let newJoke = {
+            joke:e.target.joke.value,
+            category:e.target.section.value}
+        let newCategory = e.target.section.value
+        findCorrectCategory(`${newCategory}`, newJoke)
+        postJoke(newJoke)
+    }
+
+
   }
 
   document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)

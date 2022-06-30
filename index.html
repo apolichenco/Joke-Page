@@ -10,7 +10,7 @@
 <body>
     <div id="nav-bar">
         <h2 id="nav-bar-title">YOUR DOSE OF JOKES</h2>
-        <h5 class="nav-bar-li" id="add-a-joke">
+        <h5 class="nav-bar-options" id="add-a-joke">
             <button class="open-button" onclick="openForm()">Add a Joke</button>        
         </h5>
         <div class="form-popup" id="myForm">
@@ -30,13 +30,15 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                 </form>
         </div>
-        <select id="joke-dropdown" name="select-joke">
-            <option value="all">Categories</option>
-            <option value="a">Programming</option>
-            <option value="b">Misc</option>
-            <option value="c">Dark</option>
-            <option value="d">Pun</option>
-        </select>
+        <div class ="nav-bar-options">
+            <select id="joke-dropdown" name="select-joke">
+                <option value="all">Categories</option>
+                <option value="a">Programming</option>
+                <option value="b">Misc</option>
+                <option value="c">Dark</option>
+                <option value="d">Pun</option>
+            </select>
+        </div>
     </div>
     <div class="joke-box">
         <button id="make-it-random">Random Joke</button>
