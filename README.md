@@ -9,18 +9,18 @@ This page is meant to add jokes to the page, pull up a random joke, and add a jo
    * Press "Add A Joke", fill in a new joke and choose category
 
 ### Requirements
-    * Have json.server installed
+* Have json.server installed
 
 ### Installation Instructions
-    * Fork and clone
+* Fork and clone
     * Run json.server for db.json
     * Open index.html in the browser
 
 ### Problems
-    * Part of the code in the fetchJokes function has a formula to stop repeated jokes from being posted, but doesn't work 100%. So another formula is needed at fetchUploadedJokes function. Would like to cut that down.
+*     Part of the code in the fetchJokes function has a formula to stop repeated jokes from being posted, but doesn't work 100%. So another formula is needed at fetchUploadedJokes function. Would like to cut that down.
     * The random joke box doesn't go under the navbar.
     * Update the new add joke box.
 
 ### Licensing
-    * I used the following website: 
+* I used the following website: 
         https://sv443.net/jokeapi/v2/
