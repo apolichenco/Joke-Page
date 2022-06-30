@@ -24,12 +24,6 @@
     text-align: center;
     padding: 1px 1px;
 }
-#add-a-joke {
-  margin-top: -1px;
-  margin: 0;
-  padding: 0;
-  margin-right: 10px;
-} 
 .joke-box {
     border-style: solid;
     height: 200px;
@@ -41,8 +35,24 @@
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
-
+#make-it-random {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+#random-joke-displayed {
+  position: absolute;
+  top: 15px;
+}
+#fetch-jokes {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%);
+}
 .all-jokes {
     display: flex;
     flex-wrap: wrap;

@@ -1,5 +1,6 @@
 let i = 1;
 let allJokes = []
+
 function fetchJokes() {
     fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?type=single&amount=10")
         .then(response => response.json())
@@ -23,17 +24,8 @@ function fetchUploadedJokes() {
     fetch("http://localhost:3000/jokes")
     .then(response => response.json())
     .then(data => {
-        // allJokes = []
         data.forEach(theJoke => {
-            if (allJokes.includes(theJoke.joke)) {
-            //     const idNumber = theJoke.id
-                console.log("Don't come here!!!")
-            //     deleteFromDBJ(theJoke, idNumber)
-            }
-            else {
-            // allJokes += theJoke.joke
             categorize(theJoke)
-            }
         })
     })
 }
@@ -70,31 +62,6 @@ function postJoke(theJokeSource) {
     .then(response => response.json())
     .then(data => console.log("HI"))
 }
-function deleteFromDBJ(theJoke, idNumber) {
-    fetch(`http://localhost:3000/jokes/${idNumber}`, { 
-        method: 'DELETE' ,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(res => res.json())
-    .then(elm => console.log(elm))
-}
-
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-// fetchJokes()
-
-fetchUploadedJokes()
-
-setTimeout(dropdownSorter, 500)
 
 function dropdownSorter() {
     const dropDown = document.querySelector('#joke-dropdown')
@@ -119,7 +86,7 @@ function handleChange(event) {
         window.location.hash = "#pu-jokes";    
     }
 }
-   
+  
 function randomizeTheJoke() {
     const randomBox = document.querySelector("#random-joke-displayed")
     const randomNumber = Math.floor(Math.random() * (i - 1) ) + 1;
@@ -127,23 +94,20 @@ function randomizeTheJoke() {
     randomBox.innerHTML = actualRandomJoke.innerHTML
 }
 
-setTimeout(randomizeTheJoke, 1000)
-setTimeout(keepRandomizing, 1200)
 function keepRandomizing() {
     document.querySelector("#make-it-random").addEventListener("click", randomizeTheJoke)
 } 
+
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-  }
-  
-  function closeForm() {
+}
+
+function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
+}
 
-  function addJokeToPage(e){
+function addJokeToPage(e){
     e.preventDefault()
-
-    let allJokes = []
     if (allJokes.includes(e.target.joke.value)) {
         console.log("a repeat")
     }
@@ -151,12 +115,45 @@ function openForm() {
         let newJoke = {
             joke:e.target.joke.value,
             category:e.target.section.value}
-        let newCategory = e.target.section.value
+        let newCategory = newJoke.category
+        allJokes += newJoke.joke
         findCorrectCategory(`${newCategory}`, newJoke)
         postJoke(newJoke)
     }
+}
+
+fetchUploadedJokes()
+setTimeout(dropdownSorter, 500)
+setTimeout(randomizeTheJoke, 400)
+setTimeout(keepRandomizing, 500)
+document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
+document.querySelector("#fetch-jokes").addEventListener("click", fetchJokes)
 
 
-  }
 
-  document.querySelector("#add-a-new-joke").addEventListener("submit", addJokeToPage)
+
+
+
+
+//     // allJokes = []
+//     data.forEach(theJoke => {
+//     if (allJokes.includes(theJoke.joke)) {
+//     //     const idNumber = theJoke.id
+//         console.log("Don't come here!!!")
+//     //     deleteFromDBJ(theJoke, idNumber)
+//     }
+//     else {
+//     // allJokes += theJoke.joke
+//     categorize(theJoke)
+//     }
+// })
+// function deleteFromDBJ(theJoke, idNumber) {
+//     fetch(`http://localhost:3000/jokes/${idNumber}`, { 
+//         method: 'DELETE' ,
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     })
+//     .then(res => res.json())
+//     .then(elm => console.log(elm))
+// }
