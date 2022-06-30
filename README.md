@@ -13,13 +13,13 @@ This page is meant to add jokes to the page, pull up a random joke, and add a jo
 
 ### Installation Instructions
 * Fork and clone
-    * Run json.server for db.json
-    * Open index.html in the browser
+* Run json.server for db.json
+* Open index.html in the browser
 
 ### Problems
 *     Part of the code in the fetchJokes function has a formula to stop repeated jokes from being posted, but doesn't work 100%. So another formula is needed at fetchUploadedJokes function. Would like to cut that down.
-    * The random joke box doesn't go under the navbar.
-    * Update the new add joke box.
+* The random joke box doesn't go under the navbar.
+* Update the new add joke box.
 
 ### Licensing
 * I used the following website: 
